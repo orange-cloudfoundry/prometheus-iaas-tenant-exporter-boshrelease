@@ -1,0 +1,14 @@
+set -e
+set -u
+set -x
+
+. common/setup-java-prepackaging.sh
+
+cd ${BUILD_DIR}/prometheus-iaas-tenant-exporter
+./mvnw clean install -DskipTests=true --settings settings.xml
+mv target/prometheus-iaas-tenant-exporter-0.0.1-SNAPSHOT.jar  ${BUILD_DIR}
+
+
+cd ${BUILD_DIR}
+rm -rf prometheus-iaas-tenant-exporter
+

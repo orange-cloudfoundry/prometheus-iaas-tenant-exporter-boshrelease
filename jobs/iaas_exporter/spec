@@ -1,0 +1,14 @@
+---
+name: iaas_exporter
+packages:
+- openjdk
+- iaas_exporter_pkg
+templates:
+  bin/ctl: bin/ctl
+  bin/monit_debugger: bin/monit_debugger
+  data/properties.sh.erb: data/properties.sh
+  helpers/ctl_setup.sh: helpers/ctl_setup.sh
+  helpers/ctl_utils.sh: helpers/ctl_utils.sh
+  config/application.yml.erb: config/application.yml
+  config/logback.xml.erb: config/logback.xml
+properties: {}

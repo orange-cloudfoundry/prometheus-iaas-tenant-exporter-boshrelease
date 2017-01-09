@@ -1,0 +1,7 @@
+---
+name: iaas_exporter_pkg
+dependencies: []
+files:
+- prometheus-iaas-tenant-exporter/**/*
+- openjdk/*
+- common/setup-java-prepackaging.sh
