@@ -1,5 +1,5 @@
-check process oauth_gateway
-  with pidfile /var/vcap/sys/run/oauth_gateway/oauth_gateway.pid
-  start program "/var/vcap/jobs/oauth_gateway/bin/monit_debugger oauth_gateway_ctl '/var/vcap/jobs/oauth_gateway/bin/ctl start'"
-  stop program "/var/vcap/jobs/oauth_gateway/bin/monit_debugger oauth_gateway_ctl '/var/vcap/jobs/oauth_gateway/bin/ctl stop'"
+check process iaas_exporter
+  with pidfile /var/vcap/sys/run/iaas_exporter/iaas_exporter.pid
+  start program "/var/vcap/jobs/iaas_exporter/bin/monit_debugger iaas_exporter_ctl '/var/vcap/jobs/iaas_exporter/bin/ctl start'"
+  stop program "/var/vcap/jobs/iaas_exporter/bin/monit_debugger iaas_exporter_ctl '/var/vcap/jobs/iaas_exporter/bin/ctl stop'"
   group vcap
