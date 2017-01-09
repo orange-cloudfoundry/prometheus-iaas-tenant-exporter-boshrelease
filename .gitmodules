@@ -1,0 +1,3 @@
+[submodule "src/prometheus-iaas-tenant-exporter-boshrelease"]
+	path = src/prometheus-iaas-tenant-exporter-boshrelease
+	url = https://github.com/poblin-orange/prometheus-iaas-tenant-exporter-boshrelease
