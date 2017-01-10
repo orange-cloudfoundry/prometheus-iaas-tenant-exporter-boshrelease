@@ -12,7 +12,22 @@ spring:
   application:
     name: iaas-exporter
 
-
 logging:
   level:
     org.springframework.security: DEBUG
+    
+exporter:
+  disk:
+    scan:
+      delayms: <%= p("exporter.disk.scan.delayms") %>
+  vm:
+    scan:
+      delayms: <%= p("exporter.vm.scan.delayms") %>
+  proxy_host: <%= p("exporter.proxy_host") %>
+  proxy_port: <%= p("exporter.proxy_port") %>
+  openstack: 
+    endpoint: <%= p("exporter.openstack.endpoint") %>
+    tenant: <%= p("exporter.openstack.tenant") %>
+    username: <%= p("exporter.openstack.username") %>
+    password: <%= p("exporter.openstack.password") %>
+    

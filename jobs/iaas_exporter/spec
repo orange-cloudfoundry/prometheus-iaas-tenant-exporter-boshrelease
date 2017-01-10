@@ -11,4 +11,40 @@ templates:
   helpers/ctl_utils.sh: helpers/ctl_utils.sh
   config/application.yml.erb: config/application.yml
   config/logback.xml.erb: config/logback.xml
-properties: {}
+properties:
+  exporter.disk.scan.delayms:
+    description: schedule delay in ms to scan tenant disks
+    examples: 60000
+    default: 60000
+  exporter.vm.scan.delayms:
+    description: schedule delay in ms to scan tenant vms
+    examples: 60000
+    default: 60000
+  
+  exporter.proxy_host:
+    description: proxy host to access Iaas API
+    examples: proxy.foo.com
+  
+  exporter.proxy_port:
+    description: proxy host to access Iaas API
+    examples: 3128
+    default: 3128
+  
+  exporter.openstack.endpoint:
+    description: openstack API endpoint
+    examples:
+
+  
+  exporter.openstack.tenant:
+    description: iaas tenant to scan
+    examples: my tenant
+  
+  exporter.openstack.username:
+    description:
+    examples: xxxx
+  
+  exporter.openstack.password:
+    description:
+    examples: zzzz
+
+  
