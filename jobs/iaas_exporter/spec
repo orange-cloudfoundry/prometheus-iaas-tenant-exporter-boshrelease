@@ -47,4 +47,22 @@ properties:
     description:
     examples: zzzz
 
+  exporter.cloudstack.endpoint:
+    description: cloudstack api endpoint
+    examples: http://mycloudstack:8080/api
+  
+  exporter.cloudstack.zone:
+    description: cloudstack zone as tenant to scrape
+    examples: myzone
+  
+  exporter.cloudstack.api_key:
+    description: cloudstack api key
+  
+  exporter.cloudstack.secret_access_key:
+    description: cloudstack secret access key
+
+  
+
+
+
   
