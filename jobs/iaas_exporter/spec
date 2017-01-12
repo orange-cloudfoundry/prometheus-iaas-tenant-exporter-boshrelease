@@ -2,6 +2,7 @@
 name: iaas_exporter
 packages:
 - openjdk
+- vcloud
 - iaas_exporter_pkg
 templates:
   bin/ctl: bin/ctl
