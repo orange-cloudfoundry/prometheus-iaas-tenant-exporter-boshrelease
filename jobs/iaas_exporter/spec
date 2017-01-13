@@ -62,8 +62,15 @@ properties:
   exporter.cloudstack.secret_access_key:
     description: cloudstack secret access key
 
-  
-
-
-
+  exporter.vcloud.endpoint:
+    description: vcloud api
+    
+  exporter.vcloud.org:
+    description: vcloud organization
+    
+  exporter.vcloud.username:
+    description: vcloud username
+      
+  exporter.vcloud.password:
+    description: vcloud password  
   
