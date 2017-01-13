@@ -37,11 +37,12 @@ exporter:
     api_key: <%= p("exporter.cloudstack.api_key") %>
     secret_access_key: <%= p("exporter.cloudstack.secret_access_key") %>
 
+<% if p('exporter.vcloud.endpoint')  %>
   vcloud: 
     endpoint: <%= p("exporter.vcloud.endpoint") %>
     org: <%= p("exporter.vcloud.org") %>
     username: <%= p("exporter.vcloud.username") %>
     password: <%= p("exporter.vcloud.password") %>
-    
+<% end %>    
     
     
