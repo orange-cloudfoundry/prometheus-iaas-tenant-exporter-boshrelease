@@ -21,6 +21,9 @@ case $1 in
 	exec chpst -u vcap:vcap $JAVA_HOME/bin/java  \
                -server -XX:+UseG1GC -XX:MinHeapFreeRatio=5 -XX:MaxHeapFreeRatio=25 -Xms128M -Xmx256M -Dlogging.config=$JOB_DIR/config/logback.xml \
                -Djava.security.egd=file:/dev/./urandom \
+               -Dloader.path=/var/vcap/packages/vcloud,exporter.jar \
+               -Xbootclasspath/a:/var/vcap/packages/vcloud/vcloud-java-sdk-5.1.1.jar \
+               -Xbootclasspath/a:/var/vcap/packages/vcloud/vcloud-rest-api-schemas-5.1.1.jar \
                -jar /var/vcap/packages/iaas_exporter_pkg/exporter.jar \
                >>$LOG_DIR/$JOB_NAME.log 2>&1
     ;;
