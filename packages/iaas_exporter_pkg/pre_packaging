@@ -3,7 +3,7 @@ set -u
 set -x
 
 . common/setup-java-prepackaging.sh
-
+cp vcloud/*.jar ${BUILD_DIR}/prometheus-iaas-tenant-exporter/libs
 cd ${BUILD_DIR}/prometheus-iaas-tenant-exporter
 ./mvnw clean install -DskipTests=true
 mv target/exporter-0.0.1-SNAPSHOT.jar  ${BUILD_DIR}
