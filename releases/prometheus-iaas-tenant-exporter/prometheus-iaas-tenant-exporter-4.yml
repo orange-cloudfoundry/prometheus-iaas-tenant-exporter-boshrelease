@@ -1,0 +1,31 @@
+---
+packages:
+- name: iaas_exporter_pkg
+  version: d1fdec9493f3f5caa8d0cc78b8822edc59cca958
+  fingerprint: d1fdec9493f3f5caa8d0cc78b8822edc59cca958
+  sha1: 479094edf263171f49ad0f06e86556a0d8607004
+  dependencies:
+  - vcloud
+- name: openjdk
+  version: 93c072891062f43e6a7fad1f3232064da90429af
+  fingerprint: 93c072891062f43e6a7fad1f3232064da90429af
+  sha1: ae91afb57fbf1d415a9e7c38741bfa5e7d60f2a9
+  dependencies: []
+- name: vcloud
+  version: dd36f26eed31d729c0befe11cf2fc794b2cbd4f3
+  fingerprint: dd36f26eed31d729c0befe11cf2fc794b2cbd4f3
+  sha1: 12f27a559e75d4a8dbdcff19e810d0c1be52bde8
+  dependencies: []
+jobs:
+- name: iaas_exporter
+  version: 419246884762e4e713f376df4ca387d1604188b4
+  fingerprint: 419246884762e4e713f376df4ca387d1604188b4
+  sha1: a5ae1a4d677e9d683da24089cf0d317714adf6ef
+license:
+  version: 9236ca7c1bb7f8d3b3e9caa228aebcc52adc67c4
+  fingerprint: 9236ca7c1bb7f8d3b3e9caa228aebcc52adc67c4
+  sha1: 214584a87b21783d8050e02d99ee62e716a7d931
+commit_hash: c8ebfbc3
+uncommitted_changes: true
+name: prometheus-iaas-tenant-exporter
+version: '4'
