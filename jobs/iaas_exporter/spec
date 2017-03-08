@@ -13,64 +13,68 @@ templates:
   config/application.yml.erb: config/application.yml
   config/logback.xml.erb: config/logback.xml
 properties:
-  exporter.disk.scan.delayms:
+  iaas_exporter.disk.scan.delayms:
     description: schedule delay in ms to scan tenant disks
     examples: 60000
     default: 60000
-  exporter.vm.scan.delayms:
+  iaas_exporter.vm.scan.delayms:
     description: schedule delay in ms to scan tenant vms
     examples: 60000
     default: 60000
   
-  exporter.proxy_host:
+  iaas_exporter.proxy_host:
     description: proxy host to access Iaas API
     examples: proxy.foo.com
   
-  exporter.proxy_port:
+  iaas_exporter.proxy_port:
     description: proxy host to access Iaas API
     examples: 3128
     default: 3128
   
-  exporter.openstack.endpoint:
+  iaas_exporter.openstack.endpoint:
     description: openstack API endpoint
     examples:
 
   
-  exporter.openstack.tenant:
+  iaas_exporter.openstack.tenant:
     description: iaas tenant to scan
     examples: my tenant
   
-  exporter.openstack.username:
+  iaas_exporter.openstack.username:
     description:
     examples: xxxx
   
-  exporter.openstack.password:
+  iaas_exporter.openstack.password:
     description:
     examples: zzzz
 
-  exporter.cloudstack.endpoint:
+  iaas_exporter.cloudstack.endpoint:
     description: cloudstack api endpoint
     examples: http://mycloudstack:8080/api
   
-  exporter.cloudstack.zone:
+  iaas_exporter.cloudstack.zone:
     description: cloudstack zone as tenant to scrape
     examples: myzone
   
-  exporter.cloudstack.api_key:
+  iaas_exporter.cloudstack.api_key:
     description: cloudstack api key
   
-  exporter.cloudstack.secret_access_key:
+  iaas_exporter.cloudstack.secret_access_key:
     description: cloudstack secret access key
 
-  exporter.vcloud.endpoint:
+  iaas_exporter.vcloud.endpoint:
     description: vcloud api
     
-  exporter.vcloud.org:
+  iaas_exporter.vcloud.org:
     description: vcloud organization
     
-  exporter.vcloud.username:
+  iaas_exporter.vcloud.username:
     description: vcloud username
       
-  exporter.vcloud.password:
-    description: vcloud password  
-  
+  iaas_exporter.vcloud.password:
+    description: vcloud password
+    
+    
+  iaas_exporter.web.port:
+      description: "Port on which to expose metrics"
+      default: "5000" 

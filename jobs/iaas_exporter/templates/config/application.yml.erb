@@ -19,34 +19,51 @@ logging:
 exporter:
   disk:
     scan:
-      delayms: <%= p("exporter.disk.scan.delayms") %>
+      delayms: <%= p("iaas_exporter.disk.scan.delayms") %>
   vm:
     scan:
-      delayms: <%= p("exporter.vm.scan.delayms") %>
-  proxy_host: <%= p("exporter.proxy_host") %>
-  proxy_port: <%= p("exporter.proxy_port") %>
+      delayms: <%= p("iaas_exporter.vm.scan.delayms") %>
+  proxy_host: <%= p("iaas_exporter.proxy_host") %>
+  proxy_port: <%= p("iaas_exporter.proxy_port") %>
 
-<% if_p("exporter.openstack.endpoint") do |endpoint|  %>
+
+
+<% if_p("iaas_exporter.web.port") do |port|  %>
+server:
+  port: <%= port %>
+<% end %>
+
+
+
+
+<% if_p("iaas_exporter.openstack.endpoint") do |endpoint|  %>
   openstack: 
     endpoint: <%= endpoint %>
-    tenant: <%= p("exporter.openstack.tenant") %>
-    username: <%= p("exporter.openstack.username") %>
-    password: <%= p("exporter.openstack.password") %>
+    tenant: <%= p("iaas_exporter.openstack.tenant") %>
+    username: <%= p("iaas_exporter.openstack.username") %>
+    password: <%= p("iaas_exporter.openstack.password") %>
 <% end %>    
 
-<% if_p("exporter.cloudstack.endpoint") do |endpoint|  %>
+<% if_p("iaas_exporter.cloudstack.endpoint") do |endpoint|  %>
   cloudstack: 
     endpoint: <%= endpoint %>
-    zone: <%= p("exporter.cloudstack.zone") %>
-    api_key: <%= p("exporter.cloudstack.api_key") %>
-    secret_access_key: <%= p("exporter.cloudstack.secret_access_key") %>
+    zone: <%= p("iaas_exporter.cloudstack.zone") %>
+    api_key: <%= p("iaas_exporter.cloudstack.api_key") %>
+    secret_access_key: <%= p("iaas_exporter.cloudstack.secret_access_key") %>
 <% end %>    
 
-<% if_p("exporter.vcloud.endpoint") do |endpoint|  %>
+<% if_p("iaas_exporter.vcloud.endpoint") do |endpoint|  %>
   vcloud: 
     endpoint: <%= endpoint %>
-    org: <%= p("exporter.vcloud.org") %>
-    username: <%= p("exporter.vcloud.username") %>
-    password: <%= p("exporter.vcloud.password") %>
+    org: <%= p("iaas_exporter.vcloud.org") %>
+    username: <%= p("iaas_exporter.vcloud.username") %>
+    password: <%= p("iaas_exporter.vcloud.password") %>
 <% end %>    
+    
+
+    
+    
+    
+    
+    
     
