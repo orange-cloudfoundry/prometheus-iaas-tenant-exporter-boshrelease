@@ -10,5 +10,7 @@ mv target/exporter-0.0.1-SNAPSHOT.jar  ${BUILD_DIR}
 
 
 cd ${BUILD_DIR}
+
 rm -rf prometheus-iaas-tenant-exporter
+rm -rf openjdk
 
