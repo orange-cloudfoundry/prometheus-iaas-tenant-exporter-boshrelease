@@ -1,5 +1,7 @@
 server:
-  port: ${PORT:8080}
+<% if_p("iaas_exporter.web.port") do |port|  %>
+  port: <%= port %>
+<% end %>
   tomcat:
     remote_ip_header: x-forwarded-for
     protocol_header: x-forwarded-proto
@@ -28,10 +30,6 @@ exporter:
 
 
 
-<% if_p("iaas_exporter.web.port") do |port|  %>
-server:
-  port: <%= port %>
-<% end %>
 
 
 
