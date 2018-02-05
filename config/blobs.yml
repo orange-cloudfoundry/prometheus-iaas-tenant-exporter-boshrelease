@@ -1,13 +1,9 @@
----
-vcloud/vcloud-java-sdk-5.1.1.jar:
-  object_id: d0a64f84-f051-4ff2-b110-97d4b9f7f184
-  sha: ae48e6b1fd04628df02a3de154d2ab3fcb641895
-  size: 475216
-vcloud/vcloud-rest-api-schemas-5.1.1.jar:
-  object_id: 295472d2-1388-4114-8df5-0df88b26d0f7
-  sha: 136c24827e1c17b69d43878675d1bbcdbadf60a2
-  size: 773455
 openjdk/openjdk.tar.gz:
-  object_id: c9485cd1-0815-4173-acf0-bfaabd5b85c3
-  sha: 9fc65908420c92047346e5bcc66fee0aad422c5e
   size: 126476497
+  sha: 9fc65908420c92047346e5bcc66fee0aad422c5e
+vcloud/rest-api-schemas-5.5.0.jar:
+  size: 783172
+  sha: c016e9b09bd23ec348babbbc06dc8e4c54aaf020
+vcloud/vcloud-java-sdk-5.5.0.jar:
+  size: 491632
+  sha: 18260d92595a6838972df7fa406d1731b00e1301

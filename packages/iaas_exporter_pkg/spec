@@ -1,9 +1,10 @@
 ---
 name: iaas_exporter_pkg
+
 dependencies:
+- openjdk
 - vcloud
+
 files:
 - prometheus-iaas-tenant-exporter/**/*
-- openjdk/*
-- common/setup-java-prepackaging.sh
-- vcloud/*
+

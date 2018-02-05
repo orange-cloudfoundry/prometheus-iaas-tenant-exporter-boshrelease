@@ -1,12 +1,36 @@
-set -e # exit immediately if a simple command exits with a non-zero status
-set -u # report the usage of uninitialized variables
+set -e -x
+export JAVA_HOME=/var/vcap/packages/openjdk/jre
+export PATH=$JAVA_HOME/bin:$PATH
+export NAME_MODULE_JAVA=prometheus-iaas-tenant-exporter
 
-# Detect # of CPUs so make jobs can be parallelized
-CPUS=$(grep -c ^processor /proc/cpuinfo)
- # Available variables
-# $BOSH_COMPILE_TARGET - where this package & spec'd source files are available
-# $BOSH_INSTALL_TARGET - where you copy/install files to be included in package
-export HOME=/var/vcap
+cd ${NAME_MODULE_JAVA}
 
-cp -r ${BOSH_COMPILE_TARGET}/exporter-0.0.1-SNAPSHOT.jar  ${BOSH_INSTALL_TARGET}/exporter.jar
+function extract_host_port() {
+sed -e 's`https\?://\([^/]*\).*`\1`i'
+}
 
+set +u
+#########################################
+## Declare proxy if http_proxy env exist
+#########################################
+declare -a JAVA_OPTS
+if [ -n "$http_proxy" ]; then
+JAVA_OPTS+=(-Dhttp.proxyHost=$(echo "$http_proxy" | extract_host_port | cut -d: -f1))
+JAVA_OPTS+=(-Dhttp.proxyPort=$(echo "$http_proxy" | extract_host_port | cut -d: -f2))
+fi
+if [ -n "$https_proxy" ]; then
+JAVA_OPTS+=(-Dhttps.proxyHost=$(echo "$https_proxy" | extract_host_port | cut -d: -f1))
+JAVA_OPTS+=(-Dhttps.proxyPort=$(echo "$https_proxy" | extract_host_port | cut -d: -f2))
+fi
+
+
+export MAVEN_OPTS="${JAVA_OPTS[@]}"
+#########################################
+# do the compilation
+# assert that build final name is set to NAME_MODULE_JAVA
+#########################################
+set -u
+./mvnw -X clean install -DskipTests=true
+
+
+mv target/${NAME_MODULE_JAVA}.jar ${BOSH_INSTALL_TARGET}

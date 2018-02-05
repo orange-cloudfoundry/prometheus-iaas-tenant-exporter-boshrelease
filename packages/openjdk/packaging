@@ -18,4 +18,4 @@ cd ${BOSH_INSTALL_TARGET}
 tar zxvf ${BOSH_COMPILE_TARGET}/openjdk/${JAVA_TAR_BALL}
 
 mv ${JAVA_VERSION}/* .
-rmdir ${JAVA_VERSION}
+##rmdir ${JAVA_VERSION}
