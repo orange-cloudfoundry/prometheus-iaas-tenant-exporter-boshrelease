@@ -1,9 +1,12 @@
 openjdk/openjdk.tar.gz:
   size: 126476497
+  object_id: b42884e9-4aef-4ac0-6de9-9d38114cea63
   sha: 9fc65908420c92047346e5bcc66fee0aad422c5e
 vcloud/rest-api-schemas-5.5.0.jar:
   size: 783172
+  object_id: 592ab537-f2ad-424c-5907-10a364230841
   sha: c016e9b09bd23ec348babbbc06dc8e4c54aaf020
 vcloud/vcloud-java-sdk-5.5.0.jar:
   size: 491632
+  object_id: a10837fc-bbbd-47aa-46e4-86e8fee2d325
   sha: 18260d92595a6838972df7fa406d1731b00e1301
