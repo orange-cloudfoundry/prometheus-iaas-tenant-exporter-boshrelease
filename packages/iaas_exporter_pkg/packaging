@@ -30,7 +30,8 @@ export MAVEN_OPTS="${JAVA_OPTS[@]}"
 # assert that build final name is set to NAME_MODULE_JAVA
 #########################################
 set -u
+cp /var/vcap/packages/vcloud/* ./libs/.
 ./mvnw -X clean install -DskipTests=true
 
 
-mv target/${NAME_MODULE_JAVA}.jar ${BOSH_INSTALL_TARGET}
+mv target/exporter.jar ${BOSH_INSTALL_TARGET}
