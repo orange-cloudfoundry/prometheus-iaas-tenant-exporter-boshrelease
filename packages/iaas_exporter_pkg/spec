@@ -7,4 +7,5 @@ dependencies:
 
 files:
 - prometheus-iaas-tenant-exporter/**/*
-
+- vcloud/*
+- openjdk/*
